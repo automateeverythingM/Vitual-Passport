@@ -1,0 +1,137 @@
+@tailwind base;
+@layer base {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  h1 {
+    @apply text-2xl font-bold mb-2;
+  }
+  h2 {
+    @apply text-xl font-bold mb-2;
+  }
+  h3 {
+    @apply text-lg font-bold mb-2;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+  textarea {
+    @apply p-2 w-full;
+  }
+  input {
+    @apply px-1 w-full;
+  }
+  button {
+    @apply px-3 py-1 bg-gray-200 focus:outline-none;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  @variants hover, active {
+    .neo_shadow {
+      box-shadow: 2px 2px 4px #c3c4c8, -1px -1px 3px #ffffff;
+    }
+
+    .neo_active_shadow {
+      background: #e5e7eb;
+      box-shadow: inset 2px 2px 4px #c3c4c8, inset -3px -3px 5px #ffffff;
+    }
+  }
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input,
+textarea {
+  /* border: 2px solid #d9d9d9; */
+  @apply bg-gray-100;
+  box-shadow: 2px 2px 3px #cacaca, -2px -2px 3px #ffffff;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 2px 2px 3px #89def5, -2px -2px 3px #ffffff;
+}
+
+.marker_list {
+  @apply transition ease-in-out duration-200 border-b-4 py-2 px-2 neo_shadow hover:border-blue-400 active:neo_active_shadow  cursor-pointer truncate;
+}
+
+.btn {
+  @apply ml-2 neo_shadow focus:outline-none active:neo_active_shadow;
+}
+
+.fade-out {
+  -webkit-animation: fade-out 1s ease-out both;
+  animation: fade-out 1s ease-out both;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fade-in {
+  -webkit-animation: fade-in 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.close_btn {
+  @apply absolute bg-transparent p-1 right-0 top-0 rounded-sm;
+}
+
+.close_btn:hover {
+  background: linear-gradient(145deg, #eff0f0, #ebf6f8);
+  box-shadow: 1px 1px 3px #b5bec0, -1px -1px 3px #f5ffff;
+}
+
+.close_btn:focus {
+  outline: none;
+}
+
+.close_btn:active {
+  background: #e6e6e6;
+  box-shadow: inset 2px 2px 3px #c6cfd2, inset -2px -2px 3px #e4eff2;
+}

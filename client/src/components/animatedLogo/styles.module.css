@@ -1,0 +1,67 @@
+@keyframes earthmovein {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flyin {
+  0% {
+    transform: translateX(-100%) rotate(70deg);
+    /* transform: translateY(-100%); */
+  }
+  100% {
+    transform: translateX(0);
+    /* transform: translateY(0); */
+    transform: rotate(0deg);
+  }
+}
+@keyframes showBackground {
+  0% {
+    transform: scale(5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.background {
+  transform-origin: center;
+  opacity: 0;
+  animation: showBackground 0.5s ease forwards;
+}
+
+.earth {
+  opacity: 0;
+  animation: show 0.2s ease forwards, earthmovein 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.plane {
+  transform: translateX(-100%);
+  animation: flyin 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.logo {
+  z-index: -1;
+  width: 500px;
+}

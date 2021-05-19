@@ -1,0 +1,25 @@
+.form {
+  transform: translateY(-100vh);
+  @apply z-10 overflow-hidden;
+  animation: form-land 1s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes form-land {
+  30% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(0%) scale(1.05, 0.9);
+  }
+  60% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

@@ -1,0 +1,16 @@
+.input_with_style__container {
+  width: 100%;
+}
+.input_with_style__container * {
+  display: block;
+  width: 100%;
+}
+.input_with_style__container label {
+  font-weight: bold;
+  text-align: left;
+}
+.error {
+  font-size: 0.7rem;
+  color: red;
+  text-align: left;
+}
